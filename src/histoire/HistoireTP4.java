@@ -3,6 +3,7 @@ package histoire;
 import personnages.Humain;
 import personnages.Commercant;
 import personnages.Yakuza;
+import personnages.Ronin;
 
 public class HistoireTP4 {
 	private static void scenarioPartie1TP4() {
@@ -52,7 +53,20 @@ public class HistoireTP4 {
 		yaku.extorquer(marco);
 	}
 
+	private static void scenarioPartie2Question3TP4() {
+		// Créer le Ronin "Roro", de boisson préférée "shochu" et avec 60 sous
+		// en poche :
+		Ronin roro = new Ronin("Roro", "shochu", 60);
+		roro.direBonjour();
+
+		// Créer le commerçant "Marco", avec 15 sous en poche.
+		Commercant marco = new Commercant("Marco", 15);
+
+		// Donner 10% de ses sous à Marco :
+		roro.donner(marco);
+	}
+
 	public static void main(String[] args) {
-		scenarioPartie2Question2TP4();
+		scenarioPartie2Question3TP4();
 	}
 }
