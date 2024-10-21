@@ -3,7 +3,7 @@ package personnages;
 public class Humain {
 	private String nom;
 	private String boissonFavorite;
-	private int argent;
+	protected int argent;
 
 	public Humain(String nom, String boissonFavorite, int argent) {
 		this.nom = nom;
@@ -19,7 +19,7 @@ public class Humain {
 		return argent;
 	}
 
-	public void parler(String texte) {
+	protected void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + " »");
 	}
 
@@ -45,7 +45,7 @@ public class Humain {
 		}
 	}
 
-	private boolean gagnerArgent(int gain) {
+	protected boolean gagnerArgent(int gain) {
 		// Cette méthode renvoie un booléen car le gain doit être un entier positif.
 		// Si c'est un entier négatif, on ne met pas à jour argent.
 		if (gain >= 0) {
@@ -56,7 +56,7 @@ public class Humain {
 		return false;
 	}
 
-	private boolean perdreArgent(int perte) {
+	protected boolean perdreArgent(int perte) {
 		// Cette méthode renvoie un booléen car la perte doit être un entier positif.
 		// Si c'est un entier négatif, on ne met pas à jour argent.
 		if (perte >= 0) {
