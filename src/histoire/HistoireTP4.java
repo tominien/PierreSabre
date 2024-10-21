@@ -66,7 +66,20 @@ public class HistoireTP4 {
 		roro.donner(marco);
 	}
 
+	private static void scenarioPartie3TP4() {
+		// Créer le Yakuza "Yaku Le Noir", de boisson préférée "whisky" et avec 45 sous
+		// en poche :
+		Yakuza yaku = new Yakuza("Yaku Le Noir", "whisky", 45, "Warsong");
+
+		// Créer le Ronin "Roro", de boisson préférée "shochu" et avec 54 sous
+		// en poche :
+		Ronin roro = new Ronin("Roro", "shochu", 54);
+
+		// Roro provoque Yaku Le Noir :
+		roro.provoquer(yaku);
+	}
+
 	public static void main(String[] args) {
-		scenarioPartie2Question3TP4();
+		scenarioPartie3TP4();
 	}
 }
