@@ -6,7 +6,6 @@ public class Humain {
 	protected int argent = 0;
 	protected int nbConnaissances = 0;
 	protected Humain[] memoire = new Humain[30];
-	
 
 	public Humain(String nom, String boissonFavorite, int argent) {
 		this.nom = nom;
@@ -82,7 +81,7 @@ public class Humain {
 	}
 
 	private void memoriser(Humain humain) {
-		memoire[nbConnaissances%30] = humain;
+		memoire[nbConnaissances % 30] = humain;
 		nbConnaissances++;
 	}
 
@@ -91,9 +90,11 @@ public class Humain {
 			System.out.println("Je ne connais parsonne...");
 		} else {
 			String personnes_connues = "";
-			int nbConnaissancesActuelles = nbConnaissances%30; // Afin d'éviter de recalculer nbConnaissances%30 plein de fois.
+			int nbConnaissancesActuelles = nbConnaissances % 30; // Afin d'éviter de recalculer nbConnaissances%30 plein
+																	// de fois.
 			for (int index = 0; index < nbConnaissancesActuelles; index++) {
-				personnes_connues += index != nbConnaissancesActuelles - 1 ? memoire[index].getNom() + ", " : memoire[index].getNom();
+				personnes_connues += index != nbConnaissancesActuelles - 1 ? memoire[index].getNom() + ", "
+						: memoire[index].getNom();
 			}
 			System.out.println("Je connais beaucoup de monde dont : " + personnes_connues);
 		}
