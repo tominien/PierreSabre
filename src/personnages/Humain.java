@@ -5,7 +5,8 @@ public class Humain {
 	protected String boissonFavorite;
 	protected int argent = 0;
 	protected int nbConnaissances = 0;
-	protected Humain[] memoire = new Humain[30];
+	private final int memoireMax = 30; // Afin de pouvoir facilement changer la taille de la mémoire des humains.
+	protected Humain[] memoire = new Humain[memoireMax];
 
 	public Humain(String nom, String boissonFavorite, int argent) {
 		this.nom = nom;
@@ -81,7 +82,7 @@ public class Humain {
 	}
 
 	private void memoriser(Humain humain) {
-		memoire[nbConnaissances % 30] = humain;
+		memoire[nbConnaissances % memoireMax] = humain;
 		nbConnaissances++;
 	}
 
@@ -90,13 +91,14 @@ public class Humain {
 			System.out.println("Je ne connais parsonne...");
 		} else {
 			String personnes_connues = "";
-			int nbConnaissancesActuelles = nbConnaissances % 30; // Afin d'éviter de recalculer nbConnaissances%30 plein
-																	// de fois.
+			int nbConnaissancesActuelles = nbConnaissances % memoireMax; // Afin d'éviter de recalculer nbConnaissances
+																			// % memoireMax plein
+			// de fois.
 			for (int index = 0; index < nbConnaissancesActuelles; index++) {
 				personnes_connues += index != nbConnaissancesActuelles - 1 ? memoire[index].getNom() + ", "
 						: memoire[index].getNom();
 			}
-			System.out.println("Je connais beaucoup de monde dont : " + personnes_connues);
+			parler("Je connais beaucoup de monde dont : " + personnes_connues);
 		}
 	}
 }
