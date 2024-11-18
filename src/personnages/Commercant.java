@@ -7,7 +7,7 @@ public class Commercant extends Humain {
 
 	@Override
 	public void direBonjour() {
-		parler("Bonjour ! Je m'appelle " + getNom() + "et j'aime boire du thé.");
+		parler("Bonjour ! Je m'appelle " + getNom() + " et j'aime boire du thé.");
 	}
 
 	public int seFaireExtorquer() {
