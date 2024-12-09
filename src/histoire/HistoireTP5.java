@@ -5,7 +5,7 @@ import personnages.Commercant;
 import personnages.Yakuza;
 import personnages.Ronin;
 import personnages.Samourai;
-import personnages.traitre;
+import personnages.Traitre;
 
 public class HistoireTP5 {
 	private static void scenarioPartie2Question1TP5() {
@@ -46,6 +46,6 @@ public class HistoireTP5 {
 	}
 
 	public static void main(String[] args) {
-		scenarioPartie2Question3TP5(); // Tests commandes git
+		scenarioPartie2Question3TP5();
 	}
 }
